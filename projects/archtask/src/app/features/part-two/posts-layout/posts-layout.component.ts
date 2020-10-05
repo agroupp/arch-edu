@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PostsService } from '@services';
 import { Post } from '@data';
-import { Observable, Subject } from 'rxjs';
-import { concatMap, last, mergeMap, skipUntil, switchMap, takeUntil, takeWhile, tap } from 'rxjs/operators';
+import { Observable } from 'rxjs';
+import { concatMap, mergeMap, takeWhile } from 'rxjs/operators';
 import { MatDialog } from '@angular/material/dialog';
 import { PostDialogComponent } from '../dialogs/post-dialog/post-dialog.component';
 
@@ -24,5 +24,4 @@ export class PostsLayoutComponent implements OnInit {
     )
     .subscribe(console.log)
   }
-
 }
