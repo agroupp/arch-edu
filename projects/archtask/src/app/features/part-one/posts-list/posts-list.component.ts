@@ -23,6 +23,7 @@ export class PostsListComponent implements OnInit {
   constructor(private postsService: PostsService) { }
 
   ngOnInit(): void {
+    // For testing logger only, will fail unit test
     // throw new Error('test error');
   }
 

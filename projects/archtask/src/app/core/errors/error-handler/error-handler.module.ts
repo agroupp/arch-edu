@@ -8,7 +8,7 @@ import { environment } from 'projects/archtask/src/environments/environment';
   declarations: [],
   imports: [
     CommonModule,
-    LoggerModule.instrument({ isLogging: !environment.production, localStorageKey: '__arch_log', retry: 3 })
+    LoggerModule.instrument({ isLogging: environment.production, localStorageKey: '__arch_log', retry: 3 })
   ]
 })
 export class ErrorHandlerModule { }

@@ -21,6 +21,9 @@ export class LoggerService {
       message: error.message ? error.message : error.toString(),
       timestamp: Date.now()
     };
+    if (error instanceof Error && error.stack) {
+      record.stack = error.stack;
+    }
     console.log(record);
     this.logToLocalStorage(record);
   }
