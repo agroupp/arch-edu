@@ -1,1 +1,14 @@
-<p>posts-list works!</p>
+<div class="wrapper">
+  <mat-accordion *ngIf="posts$ | async as postsGroups">
+    <mat-expansion-panel *ngFor="let group of postsGroups">
+      <mat-expansion-panel-header>
+        <mat-panel-title>User ID: {{group[0]?.userId}}</mat-panel-title>
+      </mat-expansion-panel-header>
+      <ul>
+        <li *ngFor="let post of group">
+          <p>{{post.title}}</p>
+        </li>
+      </ul>
+  </mat-expansion-panel>
+  </mat-accordion>
+</div>

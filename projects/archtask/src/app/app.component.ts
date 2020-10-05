@@ -2,9 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'sq-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  template: `<sq-main-layout></sq-main-layout>`,
+  styles: ['']
 })
 export class AppComponent {
-  title = 'archtask';
 }

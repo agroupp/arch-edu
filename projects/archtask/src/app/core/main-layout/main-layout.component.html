@@ -1,1 +1,19 @@
-<p>main-layout works!</p>
+<div class="container">
+  <mat-toolbar color="primary" class="mat-elevation-z2 toolbar">
+    <button mat-icon-button (click)="mainMenu.toggle()"><mat-icon>menu</mat-icon></button>
+    <a class="title" routerLink="/"><span>Architecture Task</span></a>
+    <div class="spacer"></div>
+    <button mat-icon-button><mat-icon>account_circle</mat-icon></button>
+  </mat-toolbar>
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #mainMenu mode="over" fixedInViewport fixedTopGap="56" class="sidenav">
+      <mat-nav-list>
+        <a mat-list-item routerLink="/part-one" (click)="mainMenu.toggle()">Part one</a>
+        <a mat-list-item routerLink="/part-two" (click)="mainMenu.toggle()">Part Two</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

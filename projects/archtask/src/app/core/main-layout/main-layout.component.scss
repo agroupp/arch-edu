@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.toolbar {
+  position: fixed;
+  z-index: 2;
+
+  .title {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    margin-left: 0.75rem;
+  }
+
+  .select {
+    width: 40px;
+    font-size: 0.85rem;
+  }
+}
+
+.sidenav-container {
+  flex: 1 0 auto;
+  margin-top: 56px;
+  @media (min-width: 600px) {
+    margin-top: 64px;
+  }
+}
+
+.sidenav {
+  min-width: 200px;
+  padding-top: 10px;
+}

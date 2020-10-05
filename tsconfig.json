@@ -23,7 +23,9 @@
       "logger": [
         "dist/logger/logger",
         "dist/logger"
-      ]
+      ],
+      "@services": ["projects/archtask/src/app/services"],
+      "@data": ["projects/archtask/src/app/data"]
     }
   },
   "angularCompilerOptions": {

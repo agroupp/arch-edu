@@ -1,4 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { PostsService } from '@services';
+import { Post } from '@data';
+import { Observable, Subject } from 'rxjs';
+import { concatMap, last, mergeMap, skipUntil, switchMap, takeUntil, takeWhile, tap } from 'rxjs/operators';
+import { MatDialog } from '@angular/material/dialog';
+import { PostDialogComponent } from '../dialogs/post-dialog/post-dialog.component';
 
 @Component({
   selector: 'sq-posts-layout',
@@ -6,10 +12,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./posts-layout.component.scss']
 })
 export class PostsLayoutComponent implements OnInit {
-
-  constructor() { }
+  posts$: Observable<Post> = this.postsService.getPosts().pipe(
+    mergeMap(posts => posts)
+  );
+  constructor(private postsService: PostsService, private dialog: MatDialog) { }
 
   ngOnInit(): void {
+    this.posts$.pipe(
+      concatMap(post => this.dialog.open(PostDialogComponent, {data: post}).afterClosed()),
+      takeWhile(val => !val)
+    )
+    .subscribe(console.log)
   }
 
 }
