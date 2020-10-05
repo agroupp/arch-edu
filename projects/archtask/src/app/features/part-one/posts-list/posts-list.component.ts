@@ -23,7 +23,7 @@ export class PostsListComponent implements OnInit {
   constructor(private postsService: PostsService) { }
 
   ngOnInit(): void {
-    throw('test error')
+    // throw new Error('test error');
   }
 
 }
