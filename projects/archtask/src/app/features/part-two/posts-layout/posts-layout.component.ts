@@ -22,6 +22,6 @@ export class PostsLayoutComponent implements OnInit {
       concatMap(post => this.dialog.open(PostDialogComponent, {data: post}).afterClosed()),
       takeWhile(val => !val)
     )
-    .subscribe(console.log)
+    .subscribe();
   }
 }

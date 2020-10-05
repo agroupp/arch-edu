@@ -24,6 +24,10 @@
         "dist/logger/logger",
         "dist/logger"
       ],
+      "@logger/*": [
+        "projects/logger/*",
+        "projects/logger"
+      ],
       "@services": ["projects/archtask/src/app/services"],
       "@data": ["projects/archtask/src/app/data"]
     }

@@ -9,6 +9,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 
+import { ErrorHandlerModule } from './errors/error-handler/error-handler.module';
 import { MainLayoutComponent } from './main-layout/main-layout.component';
 
 const routes: Route[] = [
@@ -27,6 +28,7 @@ const routes: Route[] = [
     MatListModule,
     MatIconModule,
     MatButtonModule,
+    ErrorHandlerModule,
     RouterModule.forChild(routes)
   ],
   exports: [MainLayoutComponent]
