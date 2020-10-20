@@ -1,27 +1,32 @@
-# Archtask
+# Angular Architecture Project 
+This project intended to cover the cornerstone aspects of the Angular development process. This is educational project not designed to produce any functional behavior. The goal of this project is to learn the main architectural parts the standard Angular project.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.2.
+## RxJS & Http
+### Part 1
+The goal is to get users posts data from an API and display the results in the template, requirements:
+* Refresh results every 60 seconds.
+* Display results by user
+* Make the UI responsive
 
-## Development server
+**API URL: 
+https://jsonplaceholder.typicode.com/posts**
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Part 2
+Use the same API call from the first part only now we would like to display the posts result one by one (sequentially) in a dialog, requirements:
+* Display the next post only after the previous post is closed by the user (by clicking on a close button or on the background)
 
-## Code scaffolding
+## Architecture
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Assume you have a workspace with multiple applications (build by angular CLI)  and your goal is to implement a logger package that will serve them all to capture HTTP errors, requirements:
+* The logger data will include message, stack, and timestamp.
+* The logger will write its errors to the console.
+* Extra: write errors also to localstorage
+* The logger will be used only in production.
+* The package should be publishable using npm
+* Use the logger to log HTTP errors thrown in the application.
 
-## Build
+Implement a retry mechanism for a failed http request. 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Extra: use logger to log also exception thrown anywhere in the application.
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Write at least one unit test for your solution.
